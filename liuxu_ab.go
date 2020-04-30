@@ -38,9 +38,8 @@ func main() {
         return
     }
 
-    var req_times []int64
-
     // 并发请求
+    var req_times []int64
     con_ch := make(chan int64, *concurrency)
     defer close(con_ch)
     repeat := *count / *concurrency
